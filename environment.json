@@ -1,0 +1,26 @@
+{
+  "uname": "Linux 7.0.14-linuxkit x86_64",
+  "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit\nByte Order:                              Little Endian\nCPU(s):                                  10\nOn-line CPU(s) list:                     0-9\nVendor ID:                               Apple\nModel:                                   0\nThread(s) per core:                      1\nCore(s) per socket:                      10\nSocket(s):                               1\nStepping:                                0x0\nBogoMIPS:                                48.00\nFlags:                                   fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm sb paca pacg dcpodp flagm2 frint i8mm bf16 bti afp rpres ebf16\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Mitigation; __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; CSV2, but not BHB\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected",
+  "memory": "MemTotal:        8124516 kB\nMemFree:         2852688 kB\nMemAvailable:    7254932 kB\nBuffers:          137036 kB\nCached:          4083416 kB\nSwapCached:            0 kB\nActive:           667068 kB\nInactive:        3893784 kB\nActive(anon):     297952 kB\nInactive(anon):    42920 kB\nActive(file):     369116 kB\nInactive(file):  3850864 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       1048572 kB\nSwapFree:        1048572 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             21332 kB\nWriteback:             0 kB\nAnonPages:        319444 kB\nMapped:           180840 kB\nShmem:               488 kB\nKReclaimable:     385632 kB\nSlab:             461360 kB\nSReclaimable:     385632 kB\nSUnreclaim:        75728 kB\nKernelStack:        4704 kB\nPageTables:         3496 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     5110828 kB\nCommitted_AS:    2247044 kB\nVmallocTotal:   135288315904 kB\nVmallocUsed:       11648 kB\nVmallocChunk:          0 kB\nPercpu:             3000 kB\nAnonHugePages:    219136 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    311296 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\n",
+  "clang": "Ubuntu clang version 18.1.8 (++20240731024944+3b5b5c1ec4a3-1~exp1~20240731145000.144)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "cmake": "cmake version 4.4.4\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+  "ninja": "1.10.1",
+  "resource_limits": {
+    "cpu.max": "400000 100000",
+    "cpuset.cpus.effective": "0-3",
+    "memory.max": "8589934592",
+    "memory.swap.max": "0"
+  },
+  "method": {
+    "target": "userver_study",
+    "build_type": "Release",
+    "jobs": 4,
+    "clean_build": true,
+    "compiler_cache_disabled": true,
+    "trace_granularity_us": 500,
+    "debug_compression": "zlib, explicitly set for both variants; avoids Clang zstd / old GNU ld mismatch",
+    "timed": "cmake --build only; configure, analyzer, copying and downloading excluded",
+    "filesystem": "container Linux filesystem; results exported after each build",
+    "order": "alternating paired AB/BA; one unreported warm-up build for each variant"
+  }
+}

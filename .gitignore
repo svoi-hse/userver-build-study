@@ -1,0 +1,6 @@
+results/*
+!results/LATEST
+!results/submitted/
+__pycache__/
+*.pyc
+.DS_Store

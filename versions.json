@@ -1,0 +1,12 @@
+{
+  "image": "ghcr.io/userver-framework/ubuntu-22.04-userver@sha256:fca9c8ac7e97b4e2b042d822facbb152aec10a9d4e09c0862e44c50640f3f303",
+  "platform": "linux/amd64",
+  "clang_build_analyzer_commit": "55447756ff8af2f87e4a315f2ba637b9380363ea",
+  "clang_build_analyzer_archive_sha256": "6571520c81f1dbb42a42d15e85c7069e54d1b7d43a42fffc794d39f7c0a70f4a",
+  "cpus": 4,
+  "cpuset_cpus": "0-3",
+  "memory": "8g",
+  "memory_swap": "8g",
+  "jobs": 4,
+  "clang_package": "clang-18=1:18.1.8~++20240731024944+3b5b5c1ec4a3-1~exp1~20240731145000.144"
+}

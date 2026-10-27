@@ -1,0 +1,10 @@
+--- baseline/CMakeLists.txt
++++ optimized/CMakeLists.txt
+@@ -78,4 +78,7 @@
+     FILES ${CONFIGS_FILES}
+     DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/${PROJECT_NAME}
+     COMPONENT ${PROJECT_NAME}
+-)+)
++# Hypothesis: reuse the expensive common userver component header across object files.
++# PCH generation is included in every clean-build measurement.
++target_precompile_headers(${PROJECT_NAME}_objs PRIVATE <userver/components/component.hpp>)
