@@ -1,0 +1,41 @@
+
+Debug compression: zstd
+$ clang++-18 -g -gz=zstd -c /tmp/debug-compression-jit2d27r/main.cpp -o /tmp/debug-compression-jit2d27r/zstd.o
+exit=0
+$ readelf -x .debug_info /tmp/debug-compression-jit2d27r/zstd.o
+readelf: Warning: section '.debug_str' has unsupported compress type: 2
+
+Hex dump of section '.debug_info':
+ NOTE: This section has relocations against it, but these have NOT been applied to this dump.
+  0x00000000 57000000 05000108 00000000 01002100 W.............!.
+  0x00000010 01000000 00000000 00020020 00000000 ........... ....
+  0x00000020 00000002 00200000 00015603 00014800 ..... ....V...H.
+  0x00000030 00000302 91780500 01480000 00040291 .....x...H......
+  0x00000040 7000014c 00000000 05040504 06510000 p..L.........Q..
+  0x00000050 00065600 00000506 060100            ..V........
+
+exit=0
+$ clang++-18 -Wl,--compress-debug-sections=zlib /tmp/debug-compression-jit2d27r/zstd.o -o /tmp/debug-compression-jit2d27r/zstd
+/usr/bin/ld: /tmp/debug-compression-jit2d27r/zstd.o: unable to initialize decompress status for section .debug_str
+/usr/bin/ld: /tmp/debug-compression-jit2d27r/zstd.o: unable to initialize decompress status for section .debug_str
+/tmp/debug-compression-jit2d27r/zstd.o: file not recognized: file format not recognized
+clang++-18: error: linker command failed with exit code 1 (use -v to see invocation)
+exit=1
+
+Debug compression: zlib
+$ clang++-18 -g -gz=zlib -c /tmp/debug-compression-jit2d27r/main.cpp -o /tmp/debug-compression-jit2d27r/zlib.o
+exit=0
+$ readelf -x .debug_info /tmp/debug-compression-jit2d27r/zlib.o
+
+Hex dump of section '.debug_info':
+ NOTE: This section has relocations against it, but these have NOT been applied to this dump.
+  0x00000000 57000000 05000108 00000000 01002100 W.............!.
+  0x00000010 01000000 00000000 00020020 00000000 ........... ....
+  0x00000020 00000002 00200000 00015603 00014800 ..... ....V...H.
+  0x00000030 00000302 91780500 01480000 00040291 .....x...H......
+  0x00000040 7000014c 00000000 05040504 06510000 p..L.........Q..
+  0x00000050 00065600 00000506 060100            ..V........
+
+exit=0
+$ clang++-18 -Wl,--compress-debug-sections=zlib /tmp/debug-compression-jit2d27r/zlib.o -o /tmp/debug-compression-jit2d27r/zlib
+exit=0
